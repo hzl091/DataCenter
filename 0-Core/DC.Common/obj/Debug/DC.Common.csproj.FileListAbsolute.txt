@@ -1,0 +1,8 @@
+E:\mytest\DataCenter\DC.Common\bin\Debug\DC.Common.dll
+E:\mytest\DataCenter\DC.Common\bin\Debug\DC.Common.pdb
+E:\mytest\DataCenter\DC.Common\obj\Debug\DC.Common.dll
+E:\mytest\DataCenter\DC.Common\obj\Debug\DC.Common.pdb
+E:\mytest\DataCenter\0-Core\DC.Common\bin\Debug\DC.Common.dll
+E:\mytest\DataCenter\0-Core\DC.Common\bin\Debug\DC.Common.pdb
+E:\mytest\DataCenter\0-Core\DC.Common\obj\Debug\DC.Common.dll
+E:\mytest\DataCenter\0-Core\DC.Common\obj\Debug\DC.Common.pdb

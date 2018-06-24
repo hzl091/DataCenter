@@ -1,0 +1,15 @@
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\DC.Domain.Test.dll
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\DC.Domain.Test.pdb
+E:\mytest\DataCenter\DC.Domain.Test\obj\Debug\DC.Domain.Test.dll
+E:\mytest\DataCenter\DC.Domain.Test\obj\Debug\DC.Domain.Test.pdb
+E:\mytest\DataCenter\DC.Domain.Test\obj\Debug\DC.Domain.Test.csprojResolveAssemblyReference.cache
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\DC.Domain.dll
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\MyFX.Core.dll
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\DC.Common.dll
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\Newtonsoft.Json.dll
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\Autofac.dll
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\DC.Domain.pdb
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\MyFX.Core.pdb
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\DC.Common.pdb
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\Newtonsoft.Json.xml
+E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\Autofac.xml
