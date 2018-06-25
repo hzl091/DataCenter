@@ -1,0 +1,71 @@
+﻿
+
+ --@Columns          要得到的列
+--@TableName        表名（可做联合查询）
+--@Condition        查询条件
+--@OrderBy          排序规则
+--@PageNum          第几页
+--@PageSize         每页有多少务记录
+--@PageCount        输出总页数
+--@RecordCount      输出总记录数
+ALTER Procedure Pager
+(
+    @Columns        varchar(max),
+    @TableName      varchar(max),
+    @Condition      varchar(max),
+    @OrderBy        varchar(max),
+    @PageNum        int,
+    @PageSize       int,
+    @PageCount      int output,
+    @RecordCount    bigint output
+)
+AS
+    DECLARE @Sql nvarchar(max);
+    Set @Sql = 'Select @CountOut = Count(*) From ' + @TableName + ' Where ' + @Condition;
+    EXEC sp_executesql @Sql,N'@CountOut INT OUTPUT',@CountOut = @RecordCount OUTPUT;
+
+    Set @PageCount = @RecordCount / @PageSize;
+    IF(@RecordCount % @PageSize > 0) Set @PageCount = @PageCount + 1;
+    IF(@PageNum < 1) Set @PageNum = 1;
+    IF(@PageNum > @PageCount) Set @PageNum = @PageCount;
+    Declare @BRowNum int,@ERowNum int;
+    Set @BRowNum = (@PageNum - 1) * @PageSize;
+    Set @ERowNum = @BRowNum + @PageSize;
+    Set @Sql = 
+       'Select * From (
+            Select '+@Columns+', ROW_NUMBER() Over(Order By ' + @OrderBy + ') As RowNum 
+            From ' + @TableName + ' 
+            Where ' + @Condition + '
+        ) as TempT 
+        Where RowNum > ' + Convert(varchar(10),@BRowNum) + ' 
+              And 
+              RowNum <= ' + Convert(varchar(10),@ERowNum) + ' 
+              Order By ' + @OrderBy;
+	print @Sql
+    Exec(@Sql);
+GO
+
+
+
+
+
+
+--测试：
+Declare @Columns     varchar(max)
+Declare @TableName   varchar(max)
+Declare @Condition   varchar(max)
+Declare @OrderBy     varchar(max)
+Declare @PageNum     int
+Declare @PageSize    int
+Declare @PageCount   int
+Declare @RecordCount bigint
+
+set @Columns = '*'
+set @TableName = '[pre_customers]'
+set @Condition = '1=1'
+set @ORDERBY = 'ID'
+set @PageNum = 1
+set @PageSize=20
+
+Exec Pager @Columns,@TableName,@Condition,@ORDERBY,@PageNum,@PageSize,@PageCount output,@RecordCount output
+SELECT @RecordCount, @PageCount

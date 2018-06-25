@@ -7,8 +7,6 @@ namespace DC.DAL
     public abstract class RepositoryBase<TEntity,TKey> : EFRepository<TEntity, TKey>
         where TEntity : EntityBase<TKey>, IAggregateRoot<TKey>
     {
-        public RepositoryBase()
-        {
-        }
+
     }
 }

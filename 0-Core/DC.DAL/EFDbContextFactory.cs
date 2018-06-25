@@ -12,12 +12,12 @@ namespace DC.DAL
     {
         public static DbContext GetSqlServerDbContext()
         {
-            const string dbContextName = "DC_Con";
+            const string dbContextName = "dc_con";
             SqlServerDbContext dbContext = InvokeContext.Get<SqlServerDbContext>(dbContextName);
             if (dbContext == null)
             {
                 dbContext = new SqlServerDbContext(dbContextName);
-                InvokeContext.Add<SqlServerDbContext>(dbContextName, dbContext);
+                InvokeContext.Add(dbContextName, dbContext);
             }
 
             dbContext.Database.Log = Console.WriteLine; //日志监控设置
