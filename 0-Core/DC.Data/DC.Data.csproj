@@ -46,6 +46,7 @@
     <Compile Include="Common\DataManage\ColumnInfoDto.cs" />
     <Compile Include="Common\DataManage\TableInfoDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\DataManage\AddColumnRequest.cs" />
     <Compile Include="Request\DataManage\CreateTableRequest.cs" />
   </ItemGroup>
   <ItemGroup>

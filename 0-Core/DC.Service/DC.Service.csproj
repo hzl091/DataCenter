@@ -70,9 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\AddColumnCore.cs" />
     <Compile Include="Core\CreateTableCore.cs" />
     <Compile Include="DataManage\TableInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\AddColumnValidator.cs" />
     <Compile Include="Validators\CreateTableValidator.cs" />
   </ItemGroup>
   <ItemGroup>

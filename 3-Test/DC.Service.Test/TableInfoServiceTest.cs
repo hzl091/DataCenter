@@ -37,8 +37,8 @@ namespace DC.Service.Test
             var ci = GetContainer();
             var tableInfoService = ci.Resolve<ITableInfoService>();
             var request = new CreateTableRequest();
-            request.Name = "SaleOrder";
-            request.Desc = "售后订单";
+            request.Name = "TestTabe";
+            request.Desc = "测试表";
             List<ColumnInfoDto> cols = new List<ColumnInfoDto>();
             cols.Add(new ColumnInfoDto()
             {
@@ -61,6 +61,39 @@ namespace DC.Service.Test
             request.ColumnInfos = cols;
 
             var res = tableInfoService.CreateTable(request);
+            res.CheckErrorAndThrowIt();
+        }
+
+        [TestMethod]
+        public void AddColumn_Test()
+        {
+            var ci = GetContainer();
+            var tableInfoService = ci.Resolve<ITableInfoService>();
+            var request = new AddColumnRequest();
+
+            request.Name = "TestTabe";
+            List<ColumnInfoDto> cols = new List<ColumnInfoDto>();
+            cols.Add(new ColumnInfoDto()
+            {
+                Name = "sex",
+                Desc = "性别",
+                FormItemType = FormItemType.Number,
+                IsPrimaryKey = false,
+                IsSystem = false
+            });
+
+            cols.Add(new ColumnInfoDto()
+            {
+                Name = "age",
+                Desc = "年龄",
+                FormItemType = FormItemType.Text,
+                IsPrimaryKey = false,
+                IsSystem = false
+            });
+
+            request.ColumnInfos = cols;
+
+            var res = tableInfoService.AddColumn(request);
             res.CheckErrorAndThrowIt();
         }
     }

@@ -27,5 +27,11 @@ namespace DC.Service.DataManage
             var core = new CreateTableCore(request, _uow, _tableInfoRepository);
             return core.DoExecute();
         }
+
+        public ResultObject AddColumn(AddColumnRequest request)
+        {
+            var core = new AddColumnCore(request, _uow, _tableInfoRepository);
+            return core.DoExecute();
+        }
     }
 }

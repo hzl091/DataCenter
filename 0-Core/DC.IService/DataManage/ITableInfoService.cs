@@ -11,6 +11,18 @@ namespace DC.IService.DataManage
 {
     public interface ITableInfoService : IDependency
     {
+        /// <summary>
+        /// 创建表
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         MyFX.Core.BaseModel.Result.ResultObject CreateTable(CreateTableRequest request);
+
+        /// <summary>
+        /// 添加列
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        MyFX.Core.BaseModel.Result.ResultObject AddColumn(AddColumnRequest request);
     }
 }
