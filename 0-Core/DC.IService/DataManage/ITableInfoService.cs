@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DC.Data.Common.DataManage;
 using DC.Data.Request.DataManage;
 using MyFX.Core.BaseModel;
 using MyFX.Core.DI;
@@ -31,5 +32,12 @@ namespace DC.IService.DataManage
         /// <param name="request"></param>
         /// <returns></returns>
         MyFX.Core.BaseModel.Result.ResultObject SaveTable(SaveTableRequest request);
+
+        /// <summary>
+        /// 获取表信息
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        MyFX.Core.BaseModel.Result.ResultObject<IEnumerable<TableInfoDto>> FindTables(FindTablesRequest request);
     }
 }

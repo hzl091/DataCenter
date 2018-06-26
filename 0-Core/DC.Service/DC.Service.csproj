@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AddColumnCore.cs" />
+    <Compile Include="Core\FindTablesCore.cs" />
     <Compile Include="Core\SaveTableCore.cs" />
     <Compile Include="Core\CreateTableCore.cs" />
     <Compile Include="DataManage\TableInfoService.cs" />

@@ -21,3 +21,8 @@ E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\MyFX.Repository.Ef.pdb
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\Newtonsoft.Json.xml
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\Autofac.xml
 E:\mytest\DataCenter\0-Core\DC.DAL\obj\Debug\DC.DAL.csprojResolveAssemblyReference.cache
+E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\AutoMapper.dll
+E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\System.ValueTuple.dll
+E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\AutoMapper.pdb
+E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\AutoMapper.xml
+E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\System.ValueTuple.xml

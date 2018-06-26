@@ -38,3 +38,8 @@ E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\MyFX.FluentValidation.Extension
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\MyFX.Log.Log4Net.pdb
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\MyFX.Repository.Ef.pdb
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\Newtonsoft.Json.xml
+E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\AutoMapper.dll
+E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\System.ValueTuple.dll
+E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\AutoMapper.pdb
+E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\AutoMapper.xml
+E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\System.ValueTuple.xml

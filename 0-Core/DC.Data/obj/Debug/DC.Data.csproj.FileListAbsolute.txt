@@ -15,3 +15,8 @@ E:\mytest\DataCenter\0-Core\DC.Data\bin\Debug\DC.Common.pdb
 E:\mytest\DataCenter\0-Core\DC.Data\bin\Debug\MyFX.Core.pdb
 E:\mytest\DataCenter\0-Core\DC.Data\bin\Debug\Newtonsoft.Json.xml
 E:\mytest\DataCenter\0-Core\DC.Data\bin\Debug\Autofac.xml
+E:\mytest\DataCenter\0-Core\DC.Data\bin\Debug\AutoMapper.dll
+E:\mytest\DataCenter\0-Core\DC.Data\bin\Debug\System.ValueTuple.dll
+E:\mytest\DataCenter\0-Core\DC.Data\bin\Debug\AutoMapper.pdb
+E:\mytest\DataCenter\0-Core\DC.Data\bin\Debug\AutoMapper.xml
+E:\mytest\DataCenter\0-Core\DC.Data\bin\Debug\System.ValueTuple.xml

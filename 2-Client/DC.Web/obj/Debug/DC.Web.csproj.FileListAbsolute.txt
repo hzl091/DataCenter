@@ -98,3 +98,8 @@ E:\mytest\DataCenter\2-Client\DC.Web\bin\MyFX.Core.pdb
 E:\mytest\DataCenter\2-Client\DC.Web\bin\MyFX.FluentValidation.Extension.pdb
 E:\mytest\DataCenter\2-Client\DC.Web\bin\MyFX.Log.Log4Net.pdb
 E:\mytest\DataCenter\2-Client\DC.Web\bin\MyFX.Repository.Ef.pdb
+E:\mytest\DataCenter\2-Client\DC.Web\bin\AutoMapper.dll
+E:\mytest\DataCenter\2-Client\DC.Web\bin\System.ValueTuple.dll
+E:\mytest\DataCenter\2-Client\DC.Web\bin\AutoMapper.pdb
+E:\mytest\DataCenter\2-Client\DC.Web\bin\AutoMapper.xml
+E:\mytest\DataCenter\2-Client\DC.Web\bin\System.ValueTuple.xml

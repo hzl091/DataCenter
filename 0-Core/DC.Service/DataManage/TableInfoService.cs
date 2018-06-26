@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DC.Data.Common.DataManage;
 using DC.Data.Request.DataManage;
 using DC.DAL.IRepository;
 using DC.IService.DataManage;
@@ -37,6 +38,12 @@ namespace DC.Service.DataManage
         public ResultObject SaveTable(SaveTableRequest request)
         {
             var core = new SaveTableCore(request, _uow, _tableInfoRepository);
+            return core.DoExecute();
+        }
+
+        public ResultObject<IEnumerable<TableInfoDto>> FindTables(FindTablesRequest request)
+        {
+            var core = new FindTablesCore(request, _tableInfoRepository);
             return core.DoExecute();
         }
     }

@@ -28,3 +28,8 @@ E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\MyFX.Log.Log4Net.pdb
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\MyFX.Repository.Ef.pdb
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\Newtonsoft.Json.xml
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\obj\Debug\DC.Repository.Test.csprojResolveAssemblyReference.cache
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\AutoMapper.dll
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\System.ValueTuple.dll
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\AutoMapper.pdb
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\AutoMapper.xml
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\System.ValueTuple.xml

@@ -132,5 +132,18 @@ namespace DC.Service.Test
             var res = tableInfoService.SaveTable(request);
             res.CheckErrorAndThrowIt();
         }
+
+        [TestMethod]
+        public void FindTables_Test()
+        {
+            var ci = GetContainer();
+            var tableInfoService = ci.Resolve<ITableInfoService>();
+            var request = new FindTablesRequest();
+            request.TableNames = new string[] { "TestTabe" };
+
+            var res = tableInfoService.FindTables(request);
+            res.CheckErrorAndThrowIt();
+        }
+        
     }
 }
