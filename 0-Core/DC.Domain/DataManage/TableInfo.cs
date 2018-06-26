@@ -203,6 +203,37 @@ namespace DC.Domain.DataManage
             _columnInfos.Add(info);
             return info;
         }
+
+        /// <summary>
+        /// 编辑列信息
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="desc"></param>
+        /// <param name="sort"></param>
+        /// <returns></returns>
+        public ColumnInfo EditColumnInfo(string name, string desc, int sort)
+        {
+            name = name.Replace(" ", ""); //去空格处理
+
+            #region 数据校验
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new MyFX.Core.Exceptions.DomainException("编辑失败，列名不能为空");
+            }
+
+            if (!this.CheckColumnExist(name))
+            {
+                throw new MyFX.Core.Exceptions.DomainException(string.Format("编辑失败，不存在列[{0}]", name));
+            }
+            #endregion
+
+            var columnInfo = ColumnInfos.Single(c => c.Name == name);
+            columnInfo.Desc = desc;
+            columnInfo.Sort = sort;
+
+            return columnInfo;
+        }
+
         #endregion
     }
 }

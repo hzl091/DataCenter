@@ -33,5 +33,11 @@ namespace DC.Service.DataManage
             var core = new AddColumnCore(request, _uow, _tableInfoRepository);
             return core.DoExecute();
         }
+
+        public ResultObject SaveTable(SaveTableRequest request)
+        {
+            var core = new SaveTableCore(request, _uow, _tableInfoRepository);
+            return core.DoExecute();
+        }
     }
 }

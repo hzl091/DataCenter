@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DataManage\FormItemType.cs" />
     <Compile Include="DataTableExtensions.cs" />
+    <Compile Include="OperationType.cs" />
     <Compile Include="PagerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Autofac;
+using DC.Common;
 using DC.Common.DataManage;
 using DC.Data.Common.DataManage;
 using DC.Data.Request.DataManage;
@@ -94,6 +95,41 @@ namespace DC.Service.Test
             request.ColumnInfos = cols;
 
             var res = tableInfoService.AddColumn(request);
+            res.CheckErrorAndThrowIt();
+        }
+
+        [TestMethod]
+        public void SaveTable_Test()
+        {
+            var ci = GetContainer();
+            var tableInfoService = ci.Resolve<ITableInfoService>();
+            var request = new SaveTableRequest();
+            request.Name = "TestTabe";
+            request.Desc = "测试表";
+            request.OperationType = OperationType.Edit;
+  
+            List<ColumnInfoDto> cols = new List<ColumnInfoDto>();
+            cols.Add(new ColumnInfoDto()
+            {
+                Name = "id123",
+                Desc = "id88888",
+                FormItemType = FormItemType.Number,
+                IsPrimaryKey = false,
+                IsSystem = true
+            });
+
+            cols.Add(new ColumnInfoDto()
+            {
+                Name = "orderNo888",
+                Desc = "订单号",
+                FormItemType = FormItemType.Text,
+                IsPrimaryKey = false,
+                IsSystem = false
+            });
+
+            request.ColumnInfos = cols;
+
+            var res = tableInfoService.SaveTable(request);
             res.CheckErrorAndThrowIt();
         }
     }

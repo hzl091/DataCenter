@@ -71,11 +71,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AddColumnCore.cs" />
+    <Compile Include="Core\SaveTableCore.cs" />
     <Compile Include="Core\CreateTableCore.cs" />
     <Compile Include="DataManage\TableInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validators\AddColumnValidator.cs" />
     <Compile Include="Validators\CreateTableValidator.cs" />
+    <Compile Include="Validators\SaveTableValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DC.Common\DC.Common.csproj">

@@ -24,5 +24,12 @@ namespace DC.IService.DataManage
         /// <param name="request"></param>
         /// <returns></returns>
         MyFX.Core.BaseModel.Result.ResultObject AddColumn(AddColumnRequest request);
+
+        /// <summary>
+        /// 创建或更新表
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        MyFX.Core.BaseModel.Result.ResultObject SaveTable(SaveTableRequest request);
     }
 }
