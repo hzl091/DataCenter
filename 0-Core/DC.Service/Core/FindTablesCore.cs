@@ -12,7 +12,7 @@ using MyFX.Core.BaseModel.Result;
 
 namespace DC.Service.Core
 {
-    public class FindTablesCore : TransactionServiceOptionBase<FindTablesRequest, ResultObject<IEnumerable<TableInfoDto>>>
+    public class FindTablesCore : ServiceOptionBase<FindTablesRequest, ResultObject<IEnumerable<TableInfoDto>>>
     {
         private readonly ITableInfoRepository _tableInfoRepository = null;
 

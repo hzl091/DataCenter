@@ -72,12 +72,15 @@
   <ItemGroup>
     <Compile Include="Core\AddColumnCore.cs" />
     <Compile Include="Core\FindTablesCore.cs" />
+    <Compile Include="Core\GetPagerDataCore.cs" />
     <Compile Include="Core\SaveTableCore.cs" />
     <Compile Include="Core\CreateTableCore.cs" />
+    <Compile Include="DataManage\TableDataService.cs" />
     <Compile Include="DataManage\TableInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validators\AddColumnValidator.cs" />
     <Compile Include="Validators\CreateTableValidator.cs" />
+    <Compile Include="Validators\GetPagerDataValidator.cs" />
     <Compile Include="Validators\SaveTableValidator.cs" />
   </ItemGroup>
   <ItemGroup>

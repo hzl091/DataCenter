@@ -15,6 +15,5 @@ E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\Newtonsoft.Json.xml
 E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\Autofac.xml
 E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\AutoMapper.dll
 E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\System.ValueTuple.dll
-E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\AutoMapper.pdb
 E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\AutoMapper.xml
 E:\mytest\DataCenter\DC.Domain.Test\bin\Debug\System.ValueTuple.xml

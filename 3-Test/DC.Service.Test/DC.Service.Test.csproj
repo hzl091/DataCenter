@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="TableInfoServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableDataServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\0-Core\DC.Common\DC.Common.csproj">

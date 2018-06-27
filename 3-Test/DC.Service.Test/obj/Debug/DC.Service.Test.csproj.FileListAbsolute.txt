@@ -38,6 +38,5 @@ E:\mytest\DataCenter\3-Test\DC.Service.Test\bin\Debug\DC.Service.dll
 E:\mytest\DataCenter\3-Test\DC.Service.Test\bin\Debug\DC.Service.pdb
 E:\mytest\DataCenter\3-Test\DC.Service.Test\bin\Debug\AutoMapper.dll
 E:\mytest\DataCenter\3-Test\DC.Service.Test\bin\Debug\System.ValueTuple.dll
-E:\mytest\DataCenter\3-Test\DC.Service.Test\bin\Debug\AutoMapper.pdb
 E:\mytest\DataCenter\3-Test\DC.Service.Test\bin\Debug\AutoMapper.xml
 E:\mytest\DataCenter\3-Test\DC.Service.Test\bin\Debug\System.ValueTuple.xml
