@@ -1,8 +1,20 @@
-﻿@model dynamic
+﻿@model IEnumerable<DC.Data.Common.DataManage.TableInfoDto>
 
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+    ViewBag.Title = "Index";
 }
+<h2>Index</h2>
 
-<h2>title</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="Table/Detail/@item.Name">@item.Name</a>
+            &nbsp;&nbsp;
+            <a href="Table/AddCol/@item.Name">[添加列]</a>
+            &nbsp;&nbsp;
+            <a href="Table/AddData/@item.Name">[添加数据]</a>
+            &nbsp;&nbsp;
+        </li>
+    }
+</ul>
