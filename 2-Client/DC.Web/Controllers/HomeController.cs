@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DC.Data.Request.DataManage;
+using DC.IService.DataManage;
 
 namespace DC.Web.Controllers
 {

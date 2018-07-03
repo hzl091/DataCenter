@@ -36,7 +36,7 @@ namespace DC.Service.Core
                 tableInfos = _tableInfoRepository.FindAll().ToList();
             }
 
-            return new ResultObject<IEnumerable<TableInfoDto>>(tableInfos.MapToList<TableInfo, TableInfoDto>());
+            return new ResultObject<IEnumerable<TableInfoDto>>(AutoMapper.Mapper.Instance.Map<IEnumerable<TableInfo>, List<TableInfoDto>>(tableInfos));
         }
     }
 }

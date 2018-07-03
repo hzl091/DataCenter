@@ -5,9 +5,6 @@ E:\mytest\DataCenter\DC.Service\obj\Debug\DC.Service.dll
 E:\mytest\DataCenter\DC.Service\obj\Debug\DC.Service.pdb
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\DC.Service.dll
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\DC.Service.pdb
-E:\mytest\DataCenter\0-Core\DC.Service\obj\Debug\DC.Service.dll
-E:\mytest\DataCenter\0-Core\DC.Service\obj\Debug\DC.Service.pdb
-E:\mytest\DataCenter\0-Core\DC.Service\obj\Debug\DC.Service.csprojResolveAssemblyReference.cache
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\Autofac.dll
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\DC.Common.dll
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\DC.DAL.dll
@@ -23,6 +20,8 @@ E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\MyFX.FluentValidation.Extension
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\MyFX.Log.Log4Net.dll
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\MyFX.Repository.Ef.dll
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\Newtonsoft.Json.dll
+E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\AutoMapper.dll
+E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\System.ValueTuple.dll
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\DC.Common.pdb
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\DC.DAL.pdb
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\DC.Data.pdb
@@ -38,7 +37,9 @@ E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\MyFX.FluentValidation.Extension
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\MyFX.Log.Log4Net.pdb
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\MyFX.Repository.Ef.pdb
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\Newtonsoft.Json.xml
-E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\AutoMapper.dll
-E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\System.ValueTuple.dll
+E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\AutoMapper.pdb
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\AutoMapper.xml
 E:\mytest\DataCenter\0-Core\DC.Service\bin\Debug\System.ValueTuple.xml
+E:\mytest\DataCenter\0-Core\DC.Service\obj\Debug\DC.Service.csprojResolveAssemblyReference.cache
+E:\mytest\DataCenter\0-Core\DC.Service\obj\Debug\DC.Service.dll
+E:\mytest\DataCenter\0-Core\DC.Service\obj\Debug\DC.Service.pdb

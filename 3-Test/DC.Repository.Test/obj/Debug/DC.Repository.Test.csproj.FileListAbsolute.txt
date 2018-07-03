@@ -1,8 +1,6 @@
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\DC.Repository.Test.dll.config
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\DC.Repository.Test.dll
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\DC.Repository.Test.pdb
-E:\mytest\DataCenter\3-Test\DC.Repository.Test\obj\Debug\DC.Repository.Test.dll
-E:\mytest\DataCenter\3-Test\DC.Repository.Test\obj\Debug\DC.Repository.Test.pdb
-E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\DC.Repository.Test.dll.config
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\Autofac.dll
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\DC.Common.dll
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\DC.DAL.dll
@@ -15,6 +13,8 @@ E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\MyFX.Core.dll
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\MyFX.Log.Log4Net.dll
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\MyFX.Repository.Ef.dll
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\Newtonsoft.Json.dll
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\AutoMapper.dll
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\System.ValueTuple.dll
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\DC.Common.pdb
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\DC.DAL.pdb
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\DC.Data.pdb
@@ -27,8 +27,9 @@ E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\MyFX.Core.pdb
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\MyFX.Log.Log4Net.pdb
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\MyFX.Repository.Ef.pdb
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\Newtonsoft.Json.xml
-E:\mytest\DataCenter\3-Test\DC.Repository.Test\obj\Debug\DC.Repository.Test.csprojResolveAssemblyReference.cache
-E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\AutoMapper.dll
-E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\System.ValueTuple.dll
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\AutoMapper.pdb
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\AutoMapper.xml
 E:\mytest\DataCenter\3-Test\DC.Repository.Test\bin\Debug\System.ValueTuple.xml
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\obj\Debug\DC.Repository.Test.csprojResolveAssemblyReference.cache
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\obj\Debug\DC.Repository.Test.dll
+E:\mytest\DataCenter\3-Test\DC.Repository.Test\obj\Debug\DC.Repository.Test.pdb

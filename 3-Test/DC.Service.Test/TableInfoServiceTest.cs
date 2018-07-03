@@ -28,6 +28,7 @@ namespace DC.Service.Test
                 builder.RegisterType<LogFactory>().As<ILogFactory>(); //配置使用的日志工厂
             };
 
+            Service.MapperCfg.Initialize();
             var container = DIBootstrapper.Initialize(act, new string[] { "DC.DAL", "DC.Service" });
             return container;
         }
@@ -139,7 +140,7 @@ namespace DC.Service.Test
             var ci = GetContainer();
             var tableInfoService = ci.Resolve<ITableInfoService>();
             var request = new FindTablesRequest();
-            request.TableNames = new string[] { "TestTabe" };
+            //request.TableNames = new string[] { "TestTabe" };
 
             var res = tableInfoService.FindTables(request);
             res.CheckErrorAndThrowIt();

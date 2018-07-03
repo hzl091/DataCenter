@@ -1,7 +1,5 @@
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\DC.DAL.dll
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\DC.DAL.pdb
-E:\mytest\DataCenter\0-Core\DC.DAL\obj\Debug\DC.DAL.dll
-E:\mytest\DataCenter\0-Core\DC.DAL\obj\Debug\DC.DAL.pdb
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\DC.Common.dll
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\DC.Data.dll
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\DC.Domain.dll
@@ -11,6 +9,8 @@ E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\MyFX.Core.dll
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\MyFX.Repository.Ef.dll
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\Newtonsoft.Json.dll
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\Autofac.dll
+E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\AutoMapper.dll
+E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\System.ValueTuple.dll
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\DC.Common.pdb
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\DC.Data.pdb
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\DC.Domain.pdb
@@ -20,8 +20,9 @@ E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\MyFX.Core.pdb
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\MyFX.Repository.Ef.pdb
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\Newtonsoft.Json.xml
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\Autofac.xml
-E:\mytest\DataCenter\0-Core\DC.DAL\obj\Debug\DC.DAL.csprojResolveAssemblyReference.cache
-E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\AutoMapper.dll
-E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\System.ValueTuple.dll
+E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\AutoMapper.pdb
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\AutoMapper.xml
 E:\mytest\DataCenter\0-Core\DC.DAL\bin\Debug\System.ValueTuple.xml
+E:\mytest\DataCenter\0-Core\DC.DAL\obj\Debug\DC.DAL.csprojResolveAssemblyReference.cache
+E:\mytest\DataCenter\0-Core\DC.DAL\obj\Debug\DC.DAL.dll
+E:\mytest\DataCenter\0-Core\DC.DAL\obj\Debug\DC.DAL.pdb

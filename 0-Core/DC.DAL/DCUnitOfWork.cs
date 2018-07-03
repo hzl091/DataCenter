@@ -13,7 +13,7 @@ namespace DC.DAL
         public override DbContext Context
         {
             get { return EFDbContextFactory.GetSqlServerDbContext(); }
-            set { throw new NotSupportedException(); }
+            set {}
         }
     }
 }

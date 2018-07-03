@@ -13,7 +13,7 @@ namespace DC.DAL
         public SqlServerDbContext(string name)
             : base(name)
         {
-
+            Database.SetInitializer<SqlServerDbContext>(null);
         }
 
         public DbSet<domain.DataManage.TableInfo> Orders { get; set; }
