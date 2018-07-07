@@ -50,6 +50,7 @@
     <Compile Include="Request\DataManage\CreateTableRequest.cs" />
     <Compile Include="Request\DataManage\FindTablesRequest.cs" />
     <Compile Include="Request\DataManage\GetPagerDataRequest.cs" />
+    <Compile Include="Request\DataManage\GetTableRequest.cs" />
     <Compile Include="Request\DataManage\SaveTableRequest.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -41,6 +41,12 @@ namespace DC.Service.DataManage
             return core.DoExecute();
         }
 
+        public ResultObject<TableInfoDto> GetTable(GetTableRequest request)
+        {
+            var core = new GetTableCore(request, _tableInfoRepository);
+            return core.DoExecute();
+        }
+
         public ResultObject<IEnumerable<TableInfoDto>> FindTables(FindTablesRequest request)
         {
             var core = new FindTablesCore(request, _tableInfoRepository);

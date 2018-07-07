@@ -229,8 +229,10 @@ namespace DC.Domain.DataManage
 
             var columnInfo = ColumnInfos.Single(c => c.Name == name);
             columnInfo.Desc = desc;
-            columnInfo.Sort = sort;
-
+            if (sort != 0)
+            {
+                columnInfo.Sort = sort;
+            }
             return columnInfo;
         }
 

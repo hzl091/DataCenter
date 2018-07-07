@@ -10,7 +10,7 @@ using MyFX.Core.Domain.Uow;
 
 namespace DC.Service.Core
 {
-    public class CreateTableCore : TransactionServiceOptionBase<CreateTableRequest, ResultObject>
+    public class CreateTableCore : ServiceOptionBase<CreateTableRequest, ResultObject>
     {
         private readonly ITableInfoRepository _tableInfoRepository = null;
         private readonly IUnitOfWork _uow = null;

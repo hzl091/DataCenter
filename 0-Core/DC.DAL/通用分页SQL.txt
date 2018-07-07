@@ -1,6 +1,4 @@
-﻿
-
- --@Columns          要得到的列
+﻿--@Columns          要得到的列
 --@TableName        表名（可做联合查询）
 --@Condition        查询条件
 --@OrderBy          排序规则
@@ -8,7 +6,7 @@
 --@PageSize         每页有多少务记录
 --@PageCount        输出总页数
 --@RecordCount      输出总记录数
-create Procedure Pager
+Create Procedure Pager
 (
     @Columns        varchar(max),
     @TableName      varchar(max),
@@ -21,7 +19,7 @@ create Procedure Pager
 )
 AS
     DECLARE @Sql nvarchar(max);
-    Set @Sql = 'Select @CountOut = Count(*) From ' + @TableName + ' Where ' + @Condition;
+    Set @Sql = 'Select @CountOut = Count(*) From [' + @TableName + '] Where ' + @Condition;
     EXEC sp_executesql @Sql,N'@CountOut INT OUTPUT',@CountOut = @RecordCount OUTPUT;
 
     Set @PageCount = @RecordCount / @PageSize;
@@ -34,7 +32,7 @@ AS
     Set @Sql = 
        'Select * From (
             Select '+@Columns+', ROW_NUMBER() Over(Order By ' + @OrderBy + ') As RowNum 
-            From ' + @TableName + ' 
+            From [' + @TableName + '] 
             Where ' + @Condition + '
         ) as TempT 
         Where RowNum > ' + Convert(varchar(10),@BRowNum) + ' 

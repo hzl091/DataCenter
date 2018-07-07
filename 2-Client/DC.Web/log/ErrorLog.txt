@@ -142,3 +142,156 @@
    在 MyFX.Core.AutoMapperExtension.MapToList[TSource,TDestination](IEnumerable`1 source) 位置 d:\gitroot\MyFX\MyFX.Core\AutoMapperExtension.cs:行号 26
    在 DC.Service.Core.FindTablesCore.Execute() 位置 e:\mytest\DataCenter\0-Core\DC.Service\Core\FindTablesCore.cs:行号 39
    在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 d:\gitroot\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
+[2018-07-07 21:41:35,536] [8] ERROR ErrorLog [(null)]  - System.InvalidOperationException: 支持“SqlServerDbContext”上下文的模型已在数据库创建后发生更改。请考虑使用 Code First 迁移更新数据库(http://go.microsoft.com/fwlink/?LinkId=238269)。
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.<>c__DisplayClasse`1.<CreateInitializationAction>b__d()
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(InternalContext c)
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 DC.Service.Core.FindTablesCore.Execute() 位置 e:\mytest\DataCenter\0-Core\DC.Service\Core\FindTablesCore.cs:行号 36
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 d:\gitroot\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
+[2018-07-07 21:43:14,747] [5] ERROR ErrorLog [(null)]  - System.Data.SqlClient.SqlException (0x80131904): 找不到存储过程 'Pager'。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 DC.DAL.SqlHelper.<>c__DisplayClass8.<RunPagerProcedure>b__7(SqlConnection con) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 95
+   在 DC.DAL.SqlHelper.ExecuteCommand[T](Func`2 func) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 25
+   在 DC.DAL.SqlHelper.RunPagerProcedure(SqlParameter[] parameters, Int32& pageCount, Int32& recordCount) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 90
+   在 DC.DAL.SqlHelper.GetPagerData(String tableName, String columns, String where, String orderBy, Int32 pageIndex, Int32 pageSize) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 155
+   在 DC.Service.Core.GetPagerDataCore.Execute() 位置 e:\mytest\DataCenter\0-Core\DC.Service\Core\GetPagerDataCore.cs:行号 45
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 d:\gitroot\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
+ClientConnectionId:a0ade5c4-51f1-4478-ad6d-6db2de900580
+Error Number:2812,State:62,Class:16
+[2018-07-07 21:44:41,003] [6] ERROR ErrorLog [(null)]  - System.Data.SqlClient.SqlException (0x80131904): 关键字 'Order' 附近有语法错误。
+关键字 'Order' 附近有语法错误。
+Select * From (
+            Select [FullName],[Id],[OrderNo],[Total],[Tel], ROW_NUMBER() Over(Order By ID DESC) As RowNum 
+            From Order 
+            Where 1=1
+        ) as TempT 
+        Where RowNum > 0 
+              And 
+              RowNum <= 20 
+              Order By ID DESC
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 DC.DAL.SqlHelper.<>c__DisplayClass8.<RunPagerProcedure>b__7(SqlConnection con) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 95
+   在 DC.DAL.SqlHelper.ExecuteCommand[T](Func`2 func) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 25
+   在 DC.DAL.SqlHelper.RunPagerProcedure(SqlParameter[] parameters, Int32& pageCount, Int32& recordCount) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 90
+   在 DC.DAL.SqlHelper.GetPagerData(String tableName, String columns, String where, String orderBy, Int32 pageIndex, Int32 pageSize) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 155
+   在 DC.Service.Core.GetPagerDataCore.Execute() 位置 e:\mytest\DataCenter\0-Core\DC.Service\Core\GetPagerDataCore.cs:行号 45
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 d:\gitroot\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
+ClientConnectionId:3eb151c4-1893-4db9-9155-ff283cb59010
+Error Number:156,State:1,Class:15
+[2018-07-07 21:47:50,273] [5] ERROR ErrorLog [(null)]  - System.Data.SqlClient.SqlException (0x80131904): 列名 'ID DESC' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 DC.DAL.SqlHelper.<>c__DisplayClass8.<RunPagerProcedure>b__7(SqlConnection con) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 95
+   在 DC.DAL.SqlHelper.ExecuteCommand[T](Func`2 func) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 25
+   在 DC.DAL.SqlHelper.RunPagerProcedure(SqlParameter[] parameters, Int32& pageCount, Int32& recordCount) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 90
+   在 DC.DAL.SqlHelper.GetPagerData(String tableName, String columns, String where, String orderBy, Int32 pageIndex, Int32 pageSize) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 155
+   在 DC.Service.Core.GetPagerDataCore.Execute() 位置 e:\mytest\DataCenter\0-Core\DC.Service\Core\GetPagerDataCore.cs:行号 45
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 d:\gitroot\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
+ClientConnectionId:c3c75965-772b-436f-8b52-d0d30290a775
+Error Number:207,State:1,Class:16
+[2018-07-07 21:56:56,662] [7] ERROR ErrorLog [(null)]  - System.Data.SqlClient.SqlException (0x80131904): 列名 'RowNum' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 DC.DAL.SqlHelper.<>c__DisplayClass8.<RunPagerProcedure>b__7(SqlConnection con) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 95
+   在 DC.DAL.SqlHelper.ExecuteCommand[T](Func`2 func) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 25
+   在 DC.DAL.SqlHelper.RunPagerProcedure(SqlParameter[] parameters, Int32& pageCount, Int32& recordCount) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 90
+   在 DC.DAL.SqlHelper.GetPagerData(String tableName, String columns, String where, String orderBy, Int32 pageIndex, Int32 pageSize) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 155
+   在 DC.Service.Core.GetPagerDataCore.Execute() 位置 e:\mytest\DataCenter\0-Core\DC.Service\Core\GetPagerDataCore.cs:行号 45
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 d:\gitroot\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
+ClientConnectionId:8aa905a6-ad3d-4269-b048-a9b4f40b076c
+Error Number:207,State:1,Class:16
+[2018-07-07 21:57:36,572] [7] ERROR ErrorLog [(null)]  - System.Data.SqlClient.SqlException (0x80131904): 列名 'RowNum' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 DC.DAL.SqlHelper.<>c__DisplayClass8.<RunPagerProcedure>b__7(SqlConnection con) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 95
+   在 DC.DAL.SqlHelper.ExecuteCommand[T](Func`2 func) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 25
+   在 DC.DAL.SqlHelper.RunPagerProcedure(SqlParameter[] parameters, Int32& pageCount, Int32& recordCount) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 90
+   在 DC.DAL.SqlHelper.GetPagerData(String tableName, String columns, String where, String orderBy, Int32 pageIndex, Int32 pageSize) 位置 e:\mytest\DataCenter\0-Core\DC.DAL\SqlHelper.cs:行号 155
+   在 DC.Service.Core.GetPagerDataCore.Execute() 位置 e:\mytest\DataCenter\0-Core\DC.Service\Core\GetPagerDataCore.cs:行号 45
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 d:\gitroot\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
+ClientConnectionId:8aa905a6-ad3d-4269-b048-a9b4f40b076c
+Error Number:207,State:1,Class:16

@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AddColumnCore.cs" />
+    <Compile Include="Core\GetTableCore.cs" />
     <Compile Include="Core\FindTablesCore.cs" />
     <Compile Include="Core\GetPagerDataCore.cs" />
     <Compile Include="Core\SaveTableCore.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Validators\AddColumnValidator.cs" />
     <Compile Include="Validators\CreateTableValidator.cs" />
     <Compile Include="Validators\GetPagerDataValidator.cs" />
+    <Compile Include="Validators\GetTableValidator.cs" />
     <Compile Include="Validators\SaveTableValidator.cs" />
   </ItemGroup>
   <ItemGroup>

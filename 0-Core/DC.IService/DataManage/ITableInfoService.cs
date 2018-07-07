@@ -38,6 +38,13 @@ namespace DC.IService.DataManage
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
+        MyFX.Core.BaseModel.Result.ResultObject<TableInfoDto> GetTable(GetTableRequest request);
+
+        /// <summary>
+        /// 获取表信息
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         MyFX.Core.BaseModel.Result.ResultObject<IEnumerable<TableInfoDto>> FindTables(FindTablesRequest request);
     }
 }

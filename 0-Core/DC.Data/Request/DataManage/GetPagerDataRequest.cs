@@ -22,11 +22,6 @@ namespace DC.Data.Request.DataManage
         public string TableName { get; set; }
 
         /// <summary>
-        /// 列名
-        /// </summary>
-        public string Columns { get; set; }
-
-        /// <summary>
         /// 条件
         /// </summary>
         public string Where { get; set; }

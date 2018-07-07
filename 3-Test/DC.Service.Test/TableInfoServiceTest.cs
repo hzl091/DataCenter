@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Autofac;
 using DC.Common;
 using DC.Common.DataManage;
 using DC.Data.Common.DataManage;
 using DC.Data.Request.DataManage;
 using DC.DAL;
+using DC.Domain.DataManage;
 using DC.IService.DataManage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyFX.Core.BaseModel.Request;
@@ -39,13 +41,13 @@ namespace DC.Service.Test
             var ci = GetContainer();
             var tableInfoService = ci.Resolve<ITableInfoService>();
             var request = new CreateTableRequest();
-            request.Name = "TestTabe";
-            request.Desc = "测试表";
+            request.Name = "Order";
+            request.Desc = "订单表";
             List<ColumnInfoDto> cols = new List<ColumnInfoDto>();
             cols.Add(new ColumnInfoDto()
             {
-                Name = "id",
-                Desc = "id",
+                Name = "Id",
+                Desc = "Id",
                 FormItemType = FormItemType.Number,
                 IsPrimaryKey = true,
                 IsSystem = true
@@ -53,9 +55,18 @@ namespace DC.Service.Test
 
             cols.Add(new ColumnInfoDto()
             {
-                Name = "orderNo",
+                Name = "OrderNo",
                 Desc = "订单号",
                 FormItemType = FormItemType.Text,
+                IsPrimaryKey = false,
+                IsSystem = false
+            });
+
+            cols.Add(new ColumnInfoDto()
+            {
+                Name = "Total",
+                Desc = "总价值",
+                FormItemType = FormItemType.Money,
                 IsPrimaryKey = false,
                 IsSystem = false
             });
@@ -73,21 +84,21 @@ namespace DC.Service.Test
             var tableInfoService = ci.Resolve<ITableInfoService>();
             var request = new AddColumnRequest();
 
-            request.Name = "TestTabe";
+            request.Name = "Order";
             List<ColumnInfoDto> cols = new List<ColumnInfoDto>();
             cols.Add(new ColumnInfoDto()
             {
-                Name = "sex",
-                Desc = "性别",
-                FormItemType = FormItemType.Number,
+                Name = "FullName",
+                Desc = "收货人",
+                FormItemType = FormItemType.Text,
                 IsPrimaryKey = false,
                 IsSystem = false
             });
 
             cols.Add(new ColumnInfoDto()
             {
-                Name = "age",
-                Desc = "年龄",
+                Name = "Tel",
+                Desc = "电话",
                 FormItemType = FormItemType.Text,
                 IsPrimaryKey = false,
                 IsSystem = false
@@ -105,32 +116,35 @@ namespace DC.Service.Test
             var ci = GetContainer();
             var tableInfoService = ci.Resolve<ITableInfoService>();
             var request = new SaveTableRequest();
-            request.Name = "TestTabe";
-            request.Desc = "测试表";
+            request.Name = "Order";
+            request.Desc = "订单表";
             request.OperationType = OperationType.Edit;
-  
+
             List<ColumnInfoDto> cols = new List<ColumnInfoDto>();
             cols.Add(new ColumnInfoDto()
             {
-                Name = "id123",
-                Desc = "id88888",
-                FormItemType = FormItemType.Number,
-                IsPrimaryKey = false,
-                IsSystem = true
-            });
-
-            cols.Add(new ColumnInfoDto()
-            {
-                Name = "orderNo888",
-                Desc = "订单号",
+                Name = "FullName",
+                Desc = "收货人",
                 FormItemType = FormItemType.Text,
                 IsPrimaryKey = false,
-                IsSystem = false
+                IsSystem = true,
+                Sort = 7
             });
 
             request.ColumnInfos = cols;
-
             var res = tableInfoService.SaveTable(request);
+            res.CheckErrorAndThrowIt();
+        }
+
+        [TestMethod]
+        public void GetTable_Test()
+        {
+            var ci = GetContainer();
+            var tableInfoService = ci.Resolve<ITableInfoService>();
+            var request = new GetTableRequest();
+            request.TableName = "Order";
+
+            var res = tableInfoService.GetTable(request);
             res.CheckErrorAndThrowIt();
         }
 
@@ -140,7 +154,7 @@ namespace DC.Service.Test
             var ci = GetContainer();
             var tableInfoService = ci.Resolve<ITableInfoService>();
             var request = new FindTablesRequest();
-            //request.TableNames = new string[] { "TestTabe" };
+            request.TableNames = new string[] { "Order" };
 
             var res = tableInfoService.FindTables(request);
             res.CheckErrorAndThrowIt();
