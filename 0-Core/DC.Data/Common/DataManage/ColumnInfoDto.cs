@@ -15,6 +15,11 @@ namespace DC.Data.Common.DataManage
         public string Name { get; set; }
 
         /// <summary>
+        /// 类型,如nvachar(20)
+        /// </summary>
+        public string Type { get; set; }
+
+        /// <summary>
         /// 表单项类型
         /// </summary>
         public FormItemType FormItemType { get; set; }

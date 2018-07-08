@@ -295,3 +295,11 @@ Error Number:207,State:1,Class:16
    在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 d:\gitroot\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51
 ClientConnectionId:8aa905a6-ad3d-4269-b048-a9b4f40b076c
 Error Number:207,State:1,Class:16
+[2018-07-08 16:27:26,254] [6] ERROR ErrorLog [(null)]  - System.InvalidOperationException: 无法完成该操作，因为 DbContext 已释放。
+   在 System.Data.Entity.Internal.InternalContext.CheckContextNotDisposed()
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   在 System.Linq.Queryable.SingleOrDefault[TSource](IQueryable`1 source)
+   在 DC.Service.Core.GetTableCore.Execute() 位置 e:\mytest\DataCenter\0-Core\DC.Service\Core\GetTableCore.cs:行号 29
+   在 MyFX.Core.Actions.ServiceOptionBase`2.DoExecute(Boolean throwException) 位置 d:\gitroot\MyFX\MyFX.Core\Actions\ServiceOptionBase.cs:行号 51

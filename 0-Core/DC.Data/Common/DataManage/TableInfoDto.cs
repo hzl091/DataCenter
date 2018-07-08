@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DC.Data.Common.DataManage
 {
-    public class TableInfoDto
+    public class TableInfoDto : IEnumerable
     {
         /// <summary>
         /// Id编号
@@ -37,5 +38,10 @@ namespace DC.Data.Common.DataManage
         /// 列集合信息
         /// </summary>
         public ICollection<ColumnInfoDto> ColumnInfos { get; set; }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Autofac;
+using DC.Common.DataManage;
 using DC.Data.Request.DataManage;
 using DC.DAL;
 using DC.IService.DataManage;
@@ -17,6 +19,7 @@ using MyFX.Core.DI;
 using MyFX.Core.Domain.Uow;
 using MyFX.Core.Logs;
 using MyFX.Log.Log4Net;
+using WebGrease.Css.Extensions;
 
 namespace DC.Web.Controllers
 {
@@ -31,69 +34,75 @@ namespace DC.Web.Controllers
             _tableDataService = tableDataService;
         }
 
-        // GET: Table
+        #region Index
         public ActionResult Index()
         {
             var res = _tableInfoService.FindTables(new FindTablesRequest());
             res.CheckErrorAndThrowIt();
             return View(res.Data);
         }
+        #endregion
 
+        #region Detail
         public ActionResult Detail(string tabName, string orderBy = "ID", string sort = "DESC", int pageIndex = 1)
         {
             int pageSize = 20;
-            var tableRs = _tableInfoService.GetTable(
-                   new GetTableRequest(){ TableName = tabName}
-                );
-
-            tableRs.CheckErrorAndThrowIt();
-            var tabInfo = tableRs.Data;
-            if (tabInfo == null)
-            {
-                throw new MyFX.Core.Exceptions.AppServiceException(string.Format("未查询到表[{0}]的信息", tabName));
-            }
-
-            string orderInfo = "";
-            if (string.IsNullOrEmpty(orderBy) || string.IsNullOrEmpty(sort))
-            {
-                orderInfo = "[ID] DESC";
-            }
-            else
-            {
-                orderInfo = string.Format("[{0}] {1}", orderBy, sort);
-            }
-
-
-            var tableDataRs = _tableDataService.GetPagerData(new GetPagerDataRequest()
-            {
-               TableName = tabInfo.Name,
-               OrderBy = orderInfo,
-               PageSize = pageSize,
-               PageIndex = pageIndex
-            });
-            tableDataRs.CheckErrorAndThrowIt();
-
-            var pagerInfo = tableDataRs.Data;
-            TableDataInfo info = new TableDataInfo
-            {
-                TableData = pagerInfo.PagerData,
-                TableInfo = tabInfo
-            };
-
-            Webdiyer.WebControls.Mvc.PagedList<DataRow> arts
-                = new Webdiyer.WebControls.Mvc.PagedList<DataRow>(pagerInfo.PagerData.Select(), pageIndex, pageSize, pagerInfo.RecordCount);
-            TableModel model = new TableModel();
-
-            var requestInfo = new Models.RequestInfo();
-            requestInfo.OrderBy = orderBy;
-            requestInfo.Sort = sort;
-            requestInfo.PageIndex = pageIndex;
-
-            model.PagedList = arts;
-            model.TableInfo = info;
-            model.RequestInfo = requestInfo;
-
+            var model = TableDataHelper.GetPagerData(_tableInfoService, _tableDataService, tabName, orderBy, sort, pageSize, pageIndex);
             return View(model);
+        }
+        #endregion
+
+        public ActionResult AddData(string tabName)
+        {
+            var tabInfo = TableInfoHelper.GetTableInfo(_tableInfoService, tabName);
+            return View(tabInfo);
+        }
+
+        [HttpPost]
+        public ActionResult AddData(string tabName, FormCollection form)
+        {
+            var tabInfo = TableInfoHelper.GetTableInfo(_tableInfoService, tabName);
+            var keys = form.AllKeys;
+            StringBuilder sb = new StringBuilder();
+            foreach (string colName in keys)
+            {
+                var name = colName;
+                var colConfig = tabInfo.ColumnInfos.SingleOrDefault(c => c.Name == name);
+                if (colConfig != null)
+                {
+                    sb.AppendLine(string.Format("declare @{0} {1};", colConfig.Name, colConfig.Type));
+                    if (colConfig.FormItemType == FormItemType.Double
+                        || colConfig.FormItemType == FormItemType.Money
+                        || colConfig.FormItemType == FormItemType.Number)
+                    {
+                        sb.AppendLine(string.Format("set @{0} = {1};", colConfig.Name, form[colName]));
+                    }
+                    else
+                    {
+                        sb.AppendLine(string.Format("set @{0} = '{1}';", colConfig.Name, form[colName]));
+                    }  
+                }
+                else
+                {
+                    form.Remove(colName);
+                }
+            }
+
+            string cols = "";
+            string paras = "";
+            form.AllKeys.ForEach(key =>
+            {
+                cols += string.Format("[{0}],", key);
+                paras += string.Format("@{0},", key);
+            });
+            cols = cols.Substring(0, cols.Length - 1);
+            paras = paras.Substring(0, paras.Length - 1);
+
+            sb.AppendLine(string.Format("insert into [{0}] ({1}) values({2})", tabName, cols, paras));
+            string sql = sb.ToString();
+
+            SqlHelper.ExecuteNonQuery(sql);
+            return RedirectToAction("AddData", new {tabName = tabName});
         }
     }
 }

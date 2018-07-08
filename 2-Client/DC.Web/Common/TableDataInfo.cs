@@ -18,16 +18,4 @@ namespace DC.Web.Common
 
         public IEnumerable<DataRow> Rows { get; set; }
     }
-
-    public class TableInfoHelper
-    {
-        public static string GetColumnDesc(TableInfoDto tableInfo, string colName)
-        {
-            if (colName.ToLower() == "rownum")
-            {
-                return "编号";
-            }
-            return tableInfo.ColumnInfos.Single(c => c.Name.Equals(colName)).Desc;
-        }
-    }
 }

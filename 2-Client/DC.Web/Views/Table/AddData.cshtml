@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Add Data";
+}
+
+@using DC.Common.DataManage
+@model DC.Data.Common.DataManage.TableInfoDto
+
+@Html.Raw( DC.Web.Common.HtmlHelper.CreateHtmlForm(Model, string.Format("/Table/AddData?tabName={0}",Model.Name)) )

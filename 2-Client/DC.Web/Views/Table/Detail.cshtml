@@ -5,8 +5,10 @@
 @using Webdiyer.WebControls.Mvc
 @using System.Data;
 @model  DC.Web.Models.TableModel
-<h2>Detail</h2>
+<h2>@Model.TableInfo.TableInfo.Desc</h2>
 <div id="data_list">
     @Html.Raw(DC.Web.Common.HtmlHelper.ConvertDataTableToHtml(Model.TableInfo, Model.RequestInfo.OrderBy, Model.RequestInfo.Sort))
 </div>
-@Html.Pager(Model.PagedList, new PagerOptions { PageIndexParameterName = "pageIndex", PagerItemTemplate = "{0}&nbsp;" })
+<span style="margin-right: 50px">共<span style="color: red">@(Model.PagedList.TotalItemCount)</span> 条记录 <span style="color: red">@(Model.PagedList.CurrentPageIndex)/@(Model.PagedList.TotalPageCount)</span> 页</span>
+@Html.Pager(Model.PagedList, new PagerOptions {PageIndexParameterName = "pageIndex", PagerItemTemplate = "{0}&nbsp;", CssClass = "pagination"})
+<div style="clear: both"></div>

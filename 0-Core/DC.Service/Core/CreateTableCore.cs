@@ -42,7 +42,7 @@ namespace DC.Service.Core
 
             string createTableSql = GetCreateTableSql(tabInfo);
             SqlHelper.ExecuteNonQuery(createTableSql);
-            return new BatchResultObject();
+            return new ResultObject();
         }
 
         private string GetCreateTableSql(TableInfo tableInfo)

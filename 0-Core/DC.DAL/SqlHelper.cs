@@ -163,5 +163,10 @@ namespace DC.DAL
 
             return pagerInfo;
         }
+
+        //public static int SaveTableData(string tableName)
+        //{
+
+        //}
     }
 }

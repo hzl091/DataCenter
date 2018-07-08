@@ -41,5 +41,22 @@ namespace DC.Service.Test
             });
             res.CheckErrorAndThrowIt();
         }
+
+        [TestMethod]
+        public void SaveTableData()
+        {
+            string sql = @"declare @OrderNo nvarchar(200)
+                            declare @Total decimal(18,0)
+                            declare @FullName nvarchar(200)
+                            declare @Tel nvarchar(200)
+
+                            set @OrderNo = 'rferewrwer'
+                            set @Total = 200
+                            set @FullName = 'wangwu'
+                            set @Tel = '1889556201'
+
+                            insert into [Order] ([OrderNo], [Total], [FullName], [Tel]) values(@OrderNo, @Total, @FullName, @Tel)";
+            int count = SqlHelper.ExecuteNonQuery(sql);
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace DC.Service.Core
             int pageSize = Request.PageSize;
             int pageIndex = Request.PageIndex;
             string where = string.IsNullOrEmpty(Request.Where) ? "1=1" : Request.Where;
-            string orderBy = string.IsNullOrEmpty(Request.OrderBy) ? "ID DESC" : Request.OrderBy;
+            string orderBy = string.IsNullOrEmpty(Request.OrderBy) ? "[ID] DESC" : Request.OrderBy;
 
             var tableInfo = _tableInfoRepository.Single(t =>t.Name == Request.TableName);
             var pagerData = SqlHelper.GetPagerData(tableInfo.Name, tableInfo.GetColumnSql(), where, orderBy, pageIndex, pageSize);
