@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataManage\FormItemType.cs" />
+    <Compile Include="DataManage\MoveType.cs" />
     <Compile Include="DataTableExtensions.cs" />
     <Compile Include="OperationType.cs" />
     <Compile Include="PagerInfo.cs" />

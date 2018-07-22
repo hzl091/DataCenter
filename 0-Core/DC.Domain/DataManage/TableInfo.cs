@@ -213,27 +213,85 @@ namespace DC.Domain.DataManage
         /// <returns></returns>
         public ColumnInfo EditColumnInfo(string name, string desc, int sort)
         {
-            name = name.Replace(" ", ""); //去空格处理
-
-            #region 数据校验
-            if (string.IsNullOrEmpty(name))
-            {
-                throw new MyFX.Core.Exceptions.DomainException("编辑失败，列名不能为空");
-            }
-
-            if (!this.CheckColumnExist(name))
-            {
-                throw new MyFX.Core.Exceptions.DomainException(string.Format("编辑失败，不存在列[{0}]", name));
-            }
-            #endregion
-
-            var columnInfo = ColumnInfos.Single(c => c.Name == name);
+            var columnInfo = GetColumnForBeforeEdit(name);
             columnInfo.Desc = desc;
             if (sort != 0)
             {
                 columnInfo.Sort = sort;
             }
             return columnInfo;
+        }
+
+        /// <summary>
+        /// 列排序设置
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="moveType"></param>
+        public void ColumnMove(string name, MoveType moveType)
+        {
+            var columnInfo = GetColumnForBeforeEdit(name);
+            int sort = columnInfo.Sort;
+            int minSort = this.ColumnInfos.Min(c => c.Sort);
+            int maxSort = this.ColumnInfos.Max(c => c.Sort);
+
+            int index = -1;
+            var colInfo = GetColumnIndex(SortColumnInfos.ToArray(), name, out index);
+            int currentColumnSort = colInfo.Sort;
+            
+            if (moveType == MoveType.Up)
+            {
+                if (sort == minSort) return;
+                if (index == -1) return;
+                var preColumnInfo = this.SortColumnInfos.ToArray()[index - 1];
+                int preColumnSort = preColumnInfo.Sort;
+                colInfo.Sort = preColumnSort;
+                preColumnInfo.Sort = currentColumnSort;
+            }
+            else
+            {
+                if (sort == maxSort) return;
+                if (index == -1) return;
+                var nextColumnInfo = this.SortColumnInfos.ToArray()[index + 1];
+                int nextColumnSort = nextColumnInfo.Sort;
+                colInfo.Sort = nextColumnSort;
+                nextColumnInfo.Sort = currentColumnSort;
+            }
+        }
+
+
+        private ColumnInfo GetColumnForBeforeEdit(string colName)
+        {
+            colName = colName.Replace(" ", ""); //去空格处理
+
+            #region 数据校验
+            if (string.IsNullOrEmpty(colName))
+            {
+                throw new MyFX.Core.Exceptions.DomainException("编辑失败，列名不能为空");
+            }
+
+            if (!this.CheckColumnExist(colName))
+            {
+                throw new MyFX.Core.Exceptions.DomainException(string.Format("编辑失败，不存在列[{0}]", colName));
+            }
+            #endregion
+
+            var columnInfo = ColumnInfos.Single(c => c.Name == colName);
+            return columnInfo;
+        }
+
+        private ColumnInfo GetColumnIndex(ColumnInfo[] cols, string colName, out int index)
+        {
+            for (int i = 0; i < cols.Count(); i++)
+            {
+                if (cols[i].Name == colName)
+                {
+                    index = i;
+                    return cols[i];
+                }
+            }
+
+            index = - 1;
+            return null;
         }
 
         #endregion

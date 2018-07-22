@@ -9,7 +9,9 @@
     @foreach (var item in Model)
     {
         <li>
-            <a href="Table/Detail?tabName=@item.Name">@item.Name</a>
+            <a href="Table/Detail?tabName=@item.Name">@item.Desc</a>
+            &nbsp;&nbsp;
+            <a href="Table/Cols?tabName=@item.Name">[结构]</a>
             &nbsp;&nbsp;
             <a href="Table/AddCol?tabName=@item.Name">[添加列]</a>
             &nbsp;&nbsp;

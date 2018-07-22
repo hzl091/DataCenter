@@ -34,6 +34,13 @@ namespace DC.IService.DataManage
         MyFX.Core.BaseModel.Result.ResultObject SaveTable(SaveTableRequest request);
 
         /// <summary>
+        /// 列排序调整
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        MyFX.Core.BaseModel.Result.ResultObject ColumnMove(ColumnMoveRequest request);
+
+        /// <summary>
         /// 获取表信息
         /// </summary>
         /// <param name="request"></param>

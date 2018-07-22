@@ -16,7 +16,7 @@ namespace DC.DAL
             Database.SetInitializer<SqlServerDbContext>(null);
         }
 
-        public DbSet<domain.DataManage.TableInfo> Orders { get; set; }
+        public virtual DbSet<domain.DataManage.TableInfo> Orders { get; set; }
 
         /// <summary>
         /// OnModelCreating

@@ -43,6 +43,32 @@ namespace DC.Web.Controllers
         }
         #endregion
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult Cols(string tabName)
+        {
+            var res = _tableInfoService.GetTable(new GetTableRequest() {TableName = tabName});
+            res.CheckErrorAndThrowIt();
+            return View(res.Data);
+        }
+
+        [HttpPost]
+        public ActionResult ColMove(string tabName, string colName, MoveType moveType)
+        {
+            var res = _tableInfoService.ColumnMove(new ColumnMoveRequest()
+            {
+                TabName = tabName,
+                ColName = colName,
+                MoveType = moveType
+            });
+            res.CheckErrorAndThrowIt();
+            //return Json(res);
+            return Content("ok");
+        }
+
         #region Detail
         public ActionResult Detail(string tabName, string orderBy = "ID", string sort = "DESC", int pageIndex = 1)
         {
@@ -52,6 +78,7 @@ namespace DC.Web.Controllers
         }
         #endregion
 
+        #region AddData
         public ActionResult AddData(string tabName)
         {
             var tabInfo = TableInfoHelper.GetTableInfo(_tableInfoService, tabName);
@@ -88,21 +115,22 @@ namespace DC.Web.Controllers
                 }
             }
 
-            string cols = "";
-            string paras = "";
+            string fields = "";
+            string values = "";
             form.AllKeys.ForEach(key =>
             {
-                cols += string.Format("[{0}],", key);
-                paras += string.Format("@{0},", key);
+                fields += string.Format("[{0}],", key);
+                values += string.Format("@{0},", key);
             });
-            cols = cols.Substring(0, cols.Length - 1);
-            paras = paras.Substring(0, paras.Length - 1);
+            fields = fields.Substring(0, fields.Length - 1);
+            values = values.Substring(0, values.Length - 1);
 
-            sb.AppendLine(string.Format("insert into [{0}] ({1}) values({2})", tabName, cols, paras));
+            sb.AppendLine(string.Format("insert into [{0}] ({1}) values({2})", tabName, fields, values));
             string sql = sb.ToString();
 
             SqlHelper.ExecuteNonQuery(sql);
             return RedirectToAction("AddData", new {tabName = tabName});
         }
+        #endregion
     }
 }
