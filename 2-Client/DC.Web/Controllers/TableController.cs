@@ -13,6 +13,7 @@ using DC.IService.DataManage;
 using DC.Service.DataManage;
 using DC.Web.Common;
 using DC.Web.Models;
+using MyFX.Core.Base;
 using MyFX.Core.BaseModel.Paging;
 using MyFX.Core.BaseModel.Result;
 using MyFX.Core.DI;
@@ -65,8 +66,10 @@ namespace DC.Web.Controllers
                 MoveType = moveType
             });
             res.CheckErrorAndThrowIt();
-            //return Json(res);
-            return Content("ok");
+
+            var tabRes = _tableInfoService.GetTable(new GetTableRequest() { TableName = tabName });
+            res.CheckErrorAndThrowIt();
+            return PartialView("ColsTable", tabRes.Data);
         }
 
         #region Detail

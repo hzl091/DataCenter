@@ -1,0 +1,33 @@
+﻿@model DC.Data.Common.DataManage.TableInfoDto
+@{
+    Layout = null;
+}
+<table class="table table-bordered table-hover table-condensed">
+    <tr>
+        <td>描述</td>
+        <td>列名</td>
+        <td>类型</td>
+        <td>排序</td>
+        <td>系统</td>
+        <td>表单类型</td>
+        <td>主键</td>
+        <td>操作</td>
+    </tr>
+
+    @foreach (var item in Model.ColumnInfos.OrderBy(c => c.Sort))
+    {
+        <tr>
+            <td>@item.Desc</td>
+            <td>@item.Name</td>
+            <td>@item.Type</td>
+            <td>@item.Sort</td>
+            <td>@item.IsSystem</td>
+            <td>@item.FormItemType</td>
+            <td>@item.IsPrimaryKey</td>
+            <td>
+                <a href="javascript:colmove('@Model.Name','@item.Name',1)">[上移]</a>
+                <a href="javascript:colmove('@Model.Name','@item.Name',10)">[下移]</a>
+            </td>
+        </tr>
+    }
+</table>

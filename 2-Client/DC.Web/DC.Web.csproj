@@ -275,6 +275,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Table\AddData.cshtml" />
     <None Include="Views\Table\Cols.cshtml" />
+    <None Include="Views\Table\ColsTable.cshtml" />
     <None Include="Views\Table\Detail.cshtml" />
     <None Include="Views\Table\Index.cshtml" />
   </ItemGroup>
